@@ -5,3 +5,4 @@ feedparser>=6,<7
 python-dotenv>=1,<2
 pytest>=8,<10
 dateparser>=1.2,<2
+googlenewsdecoder>=0.2.2,<0.3
