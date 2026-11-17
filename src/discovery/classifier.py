@@ -6,6 +6,7 @@ import re
 PAST_PATTERNS = [
     r"\bperformed\b",
     r"\bwrapped\s+up\b",
+    r"\bwraps\s+up\b",
     r"\bconcluded\b",
     r"\bconcluding\s+performance\b",
     r"\blast\s+night\b",
@@ -27,6 +28,11 @@ PAST_PATTERNS = [
     r"\bmade\s+an\s+appearance\s+at\b",
     r"\bpost[- ]tour\b",
     r"\bfarewell\s+show\b",
+    # Retrospective finale language. Keep these specific so a future
+    # announcement of a tour's final date is not automatically rejected.
+    r"\b(?:emotional|soulful|grand|memorable)\s+finale\b",
+    r"\bfinale\s+(?:before|after|following)\b",
+    r"\bfinal\s+(?:show|performance|concert)\s+(?:was|has\s+been)\s+held\b",
 ]
 
 

@@ -86,3 +86,27 @@ def test_interview_guard_does_not_override_direct_announcement():
         "Anuv Jain announces Delhi concert ahead of his Dastakhat World Tour"
     )
     assert result["status"] == "potential_upcoming"
+
+
+def test_indulgexpress_emotional_finale_before_global_tour_is_past():
+    result = classify_event(
+        "Bengaluru hosts Anuv Jain's emotional finale before global tour"
+    )
+    assert result["status"] == "past_or_recap"
+
+
+def test_soulful_finale_before_world_tour_is_past():
+    result = classify_event("Anuv Jain's soulful finale before his world tour")
+    assert result["status"] == "past_or_recap"
+
+
+def test_future_final_concert_announcement_is_not_marked_past():
+    result = classify_event(
+        "Anuv Jain announces final concert of his 2027 tour in Delhi"
+    )
+    assert result["status"] == "potential_upcoming"
+
+
+def test_generic_finale_word_without_context_needs_review():
+    result = classify_event("Anuv Jain discusses the finale of his new album")
+    assert result["status"] == "needs_review"
